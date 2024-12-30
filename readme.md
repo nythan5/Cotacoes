@@ -20,7 +20,7 @@ Este é um projeto de dashboard simples utilizando o Chart.js para renderizar gr
 1. Clone o repositório:
 
     ```bash
-    git clone https://github.com/seu-usuario/nome-do-repositorio.git
+    git clone https://github.com/nythan5/Cotacoes.git
     ```
 
 2. Instale as dependências:
