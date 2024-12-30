@@ -13,12 +13,14 @@ def dashboard_view(request):
         "dollar":{
             "compra": float(data['USDBRL']['bid']),
             "venda": float(data['USDBRL']['ask']),
+            'variacao':float(data['USDBRL']['varBid']),
             "data": data['USDBRL']['create_date']
         },
 
         "bitcoin":{
             "compra": float(data['BTCBRL']['bid']),
             "venda": float(data['BTCBRL']['ask']),
+            'variacao':float(data['BTCBRL']['varBid']),
             "data": data['BTCBRL']['create_date']
         }
     }

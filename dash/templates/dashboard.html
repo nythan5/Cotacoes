@@ -24,7 +24,16 @@
             <div class="col-md-6">
                 <div class="card border-2">
                     <div class="card-body p-2 m-0">
-                        <h5 class="card-title"> Dólar (<i class="bi bi-currency-dollar"></i>USD)</h5>
+                        {% if cotacoes.dollar.variacao < 0 %}
+                            <h5 class="card-title"> 
+                                Dólar (<i class="bi bi-currency-dollar"></i>USD) <i class="bi bi-arrow-down-circle-fill text-danger"></i> <small>{{cotacoes.dollar.variacao}}</small>
+                            </h5>
+                        {% else %}
+                            <h5 class="card-title"> 
+                                Dólar (<i class="bi bi-currency-dollar"></i>USD) <i class="bi bi-arrow-up-circle-fill text-success"></i> <small>{{cotacoes.dollar.variacao}}</small>
+                            </h5>
+
+                        {% endif %}
                         <p> <i class="bi bi-arrow-up"></i> {{cotacoes.dollar.compra|format_money}} | <i class="bi bi-arrow-down"></i> {{cotacoes.dollar.venda|format_money}}</p>
                     </div>
                 </div>
@@ -33,7 +42,13 @@
             <div class="col-md-6">
                 <div class="card border-2">
                     <div class="card-body p-2 m-0">
-                        <h5 class="card-title"> Bitcoin (<i class="bi bi-currency-bitcoin"></i>BTC)</h5>
+                        <h5 class="card-title">
+                            {% if cotacoes.bitcoin.variacao < 0 %}
+                                Bitcoin (<i class="bi bi-currency-bitcoin"></i>BTC) <i class="bi bi-arrow-down-circle-fill text-danger"></i> <small>{{cotacoes.bitcoin.variacao}}</small>
+                            {% else %}
+                                Bitcoin (<i class="bi bi-currency-bitcoin"></i>BTC) <i class="bi bi-arrow-up-circle-fill text-success"></i> <small>{{cotacoes.bitcoin.variacao}}</small>
+                            {% endif %}                             
+                        </h5>
                         <p> <i class="bi bi-arrow-up"></i> {{cotacoes.bitcoin.venda|format_money}} |
                              <i class="bi bi-arrow-down"></i> {{cotacoes.bitcoin.venda|format_money}}</p>
                     </div>                    
